@@ -1,0 +1,259 @@
+.ems-page {
+    &-member{
+        .ems-grid-message{
+            .ems-grid-row{
+                background: #fff;
+                margin-bottom: 10px;
+                padding: 15px 25px;
+                > div{
+                    text-align: center;
+                    padding: 0 5px;
+                    font-family: $regular;
+                    font-size: 14px;
+                }
+                .col-1{width:20px; padding-left: 0; padding-right: 0;}
+                .col-2{width:15%;}
+                .col-3{width:60%;}
+                .col-4{width:15%;}
+                &.newMessage{
+                    > div{
+                        font-family: $sBold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ems-page-default{
+    &-message{
+        div[id$="plhMesajYokLabel1"]{
+            background: none;
+            padding: 0;
+            color: $lDark;
+            line-height: inherit;
+        }
+    }
+    &-message-detail{
+        .ems-message-type, .msgDtHeader, .msgDtContent{
+            li{
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+                text-align: center;
+                > span{
+                    display: table-cell;
+                    vertical-align: middle;
+                    border: 1px solid #ddd;
+                    padding: 10px;
+                    &:first-child{
+                        border-right: 0;
+                    }
+                }
+                &:first-child{
+                    > span{border-bottom: 0; font-size: 16px; font-family:$bold; color: #231f20;}
+                }
+            }
+        }
+        .msgDtList{
+            margin-bottom: 30px;
+            &:before, &:after{
+                content:'';
+                font-size: 0;
+                width: 100%;
+                height: 0;
+                clear: both;
+                height: 0;
+                overflow: hidden;
+            }
+            .msgDtHeader, .msgDtContent{
+                ul{
+                    display: table;
+                    width: 100%;
+                    table-layout: fixed;
+                    text-align: center;
+                    li{
+                        text-align: center;
+                        display: table-cell;
+                        vertical-align: middle;
+                        border: 1px solid #ddd;
+                        &:first-child{border-right:0;}
+                        > span{
+                            border:none;
+                            display: block;
+                            &:first-child{
+                                font-size: 14px;
+                                font-family: $regular;
+                            }
+                        }
+                    }
+                }
+            }
+            .msgDtHeader{
+                ul{
+                    li{
+                        border-bottom: 0;
+                        > span:first-child{font-size: 16px; font-family:$sBold;}
+                    }
+                }
+            }
+        }
+        .msgDtListBtn{
+            @include flex();
+            @include flexDirection(row);
+            justify-content: space-between;
+            align-items: center;
+            .btnMesajKonuYeniGonder, .btnMesajCozuldu{
+                max-width: 49%;
+                background: #3f434f;
+                span{
+                    color: #fff;
+                }
+                &:hover{
+                    background: $gold;
+                    span{
+                        color: #3f434f;
+                    }
+                }
+            }
+        }
+        .ems-message-detail-form{
+            .ems-form-inner {
+                margin-top: 50px;
+                .ems-field{
+                    &.success-hide{
+                        display: none;
+                    }
+                    textarea{
+                        width: 100% !important;
+                        height: 100px;
+                        resize: none;
+                    }
+                    &.msgCaptcha{
+                        span[id$="lbfUYE_KONTROLKODU"]{
+                            display: block;
+                            margin-top: 15px;
+                        }
+                        input{
+                            border:1px solid $border;
+                            &:focus{
+                                border-color:#d9b993;
+                            }
+                        }
+                    }
+                    .geneltelefon{width: 100% !important;}
+                    .btnMesajGonder{
+                        max-width: 260px;
+                    }
+                }
+            }
+        }
+
+        .tableTitleMesajGonder{
+            span{
+                font-size: 15px;
+                font-family: $sBold;
+                padding: 30px 0;
+                display: block;
+            }
+        }
+        .tableMesajGonder_aciklama{
+            padding-bottom: 30px;
+        }
+
+        .mesajGonder{
+            .tableMesajMetin{
+                > tbody{
+                    > tr{
+                        > th{
+                            display: block;
+                            width: 100%; 
+                            padding-bottom: 10px;
+                        }
+                        > td{
+                            display: block;
+                            width: 100%; 
+                        }
+                    }
+                }
+            }
+            .pageMesajGonder_CaptchaImage1{
+                max-width: 250px;
+                > div{
+                    img, input{ margin-bottom: 10px;}
+                    > span{display: block;}
+                }
+            }
+            .pageMesajGonder_btnMesajGonder{
+                table{
+                    display: table !important;
+                    text-align: left;
+                    a.btnDefault {
+                        max-width: 250px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .ems-page {
+        &-member{
+            .ems-grid-message{
+                .ems-grid-row{
+                    padding-left: 50px;
+                    padding-right: 20px;
+                    .col-1{
+                        padding:0;
+                        height: 20px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 20px;
+                    }
+                    .col-2, .col-3, .col-4{width:100%; padding:0; margin-top: 5px;}
+                    &:last-child{margin-bottom:0;}
+                }
+            }
+
+            .ems-page-default{
+                &-message{
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                &-message-detail{
+                    .ems-page-default-info{
+                        padding-top: 0;
+                        padding-left: 0;
+                        padding-right: 0;
+                        padding-bottom: 40px !important;
+                    }
+                    .btnMesajKonuYeniGonder{margin-right:0;}
+                    .btnMesajKonuYeniGonder, .btnMesajCozuldu{
+                        max-width: 100%;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                    }
+                    .msgDtListBtn{
+                        @include flexDirection(column);
+                    }
+                    .btnMesajCozuldu{margin-top: 20px;}
+                    .mesajGonder{
+                        .pageMesajGonder_CaptchaImage1{max-width: 100%;}
+                        .pageMesajGonder_btnMesajGonder{
+                            table{
+                                a.btnDefault {
+                                    max-width: 100%;
+                                    padding-top: 20px;
+                                    padding-bottom: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,361 @@
+input[type="text"], input[type="password"], input[type="tel"], input[type="file"], select, textarea, .dropdown > span {
+    outline: none;
+    padding:5px 10px;
+    width: 100%;
+    height: 50px;
+    line-height: 40px;
+    font-family: $sBold;
+    color: $lDark;
+    font-size:14px;
+    background: #f5f5f5;
+    border:none;
+    @include transition (all .5s ease);
+}
+
+ .dropdown > span{
+     cursor: pointer;
+ }
+
+input:disabled {background: #ebebe4;}
+
+span.checkbox{
+    float: left;
+    width: 20px; 
+    height: 20px;
+    border-color: $inputborder;
+    border-width:1px 1px 1px 1px;
+    border-style: solid;
+    margin-right: 15px;
+    cursor: pointer;
+    .sStylerMainWrp {
+        display: block;
+        span.cStyler {
+            background: #fff;
+            width: 18px;
+            height: 18px;
+            border: 1px solid $gray3;
+            display: inline-block;
+            @include transition(all .2s ease);
+            &.checked {
+                border-color: $gold;
+                background: $gold;
+            }
+        }
+    }
+}
+
+.sStylerMainWrp {
+    &.sStylerWrp_select {
+        position: relative;
+        width: 100%;
+        display: inline-block; 
+        .sStylerWrp {
+            font-size: 14px;
+            line-height: 40px; 
+            height: 50px;
+            font-family: $sBold;
+            color: #3f434f;
+            position: relative;
+            padding:5px 10px;
+            background: #f5f5f5;
+            @include transition (all .2s ease-in-out);
+            &:after{
+                font-family: 'icomoon';
+                content: "\e907";
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                line-height: 1;
+                margin-top: -5px;
+                font-size: 10px;
+            }
+        }
+    }
+    select {
+        position: absolute;
+        left: 0;
+        top: 0px;
+        width: 100%!important;
+        height: 100%;
+        cursor: pointer;
+        option {
+            font-size: 13px;
+            padding: 10px 0;
+        }
+    }
+}
+
+.ems-form {
+    display: block;
+    &-inner {
+        position: relative;
+        .ems-field {
+            position: relative;
+            @include flex();
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+            &.text{
+                @include transition(.2s);
+                transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+                border: 1px solid $inputborder;
+                background: #fff;   
+                &.is-completed{
+                    border-color:$gold;
+                }
+            }
+            &.text.ems-form-err{
+                border-color: #ff566b;
+            }
+            &.button{
+                .ems-form-obj{padding-left: 0;}
+            }
+            &.phone {
+                display: none;
+            }
+            .ems-form-label {
+                font-size: 14px;
+                color: $lDark;
+                padding-left: 15px;
+                &:empty {
+                    display: none;
+                }
+            }
+            .ems-form-obj {
+                flex-grow: 1;
+                padding-left: 10px;
+                &:empty {
+                    display: none;
+                }
+                table{
+                    display:table !important;
+                    width:100%;
+                }
+                .g-recaptcha{
+                    display: none;
+                }
+            }
+            .ems-form-desc{
+                font-size: 14px;
+                line-height: 1;
+                color: $lDark;
+                /*margin-bottom: 20px;*/
+                b{
+                    font-weight: normal;
+                    font-family: $sBold;
+                }
+                &:empty {
+                    display: none;
+                }
+            }
+            textarea{
+                width: 100% !important;
+                height: 100px;
+                resize: none;
+            }
+            .ems-form-obj-alternate {
+                margin-left: 0;
+            }
+            .ems-form-obj-captcha{
+                > div:last-child{
+                    @include flex(); 
+                    flex-wrap: wrap;
+                    width: 100%;
+                    img {
+                        order: 1;
+                        margin-bottom: 20px;
+                    }
+                    span{
+                        order: 2;
+                        font-size: 12px;
+                        color: $lDark;
+                    }
+                    input{
+                        @include transition(.2s);
+                        transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+                        order: 3;
+                        margin-top: 10px;
+                        border: 1px solid $inputborder;
+                    }
+                    br{display:none;}
+                }
+            }
+            &-center{
+                text-align: center;
+            }
+            &-left{
+                text-align: left;
+            }
+            &-right{
+                text-align: right;
+            }
+            .full{
+                max-width: 100% !important;
+            }
+            &.mobile-phone{
+                .ems-form-label{
+                    width: 120px;
+                }
+            }
+            &.marginBottom0 {
+                margin-bottom: 0;
+            }
+            &.marginBottom10 {
+                margin-bottom: 10px;
+            }
+            &.marginLeft0 {
+                margin-left: 0;
+            }
+            &.margin2 {
+                margin-bottom: (10px / 2);
+            }
+            &.vam {
+                > * {
+                    vertical-align: middle;
+                }
+            }
+            .w98 {
+                > * {
+                    width: 49%;
+                    &:first-child {
+                        margin-right: 2%;
+                    }
+                }
+            }
+            &-password-forget{
+                margin-bottom: 40px;
+                .ems-form-obj{
+                    margin-bottom: 10px;
+                }
+            }
+            &-other{
+                .ems-form-obj{
+                    text-align:center;
+                    color:#bebebe;
+                    font-size:13px;
+                }
+            }
+            &-remember{
+                span.sStylerMainWrp{
+                    cursor: pointer;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 20px; 
+                    height: 20px;
+                    border-color: #ededed;
+                    border-width:1px 1px 1px 1px;
+                    border-style: solid;
+                    margin-right: 15px;
+                    padding: 3px 3px;
+                    span.cStyler {
+                        background: #fff;
+                        width: 12px;
+                        height: 12px;
+                        display: inline-block;
+                        &.checked {
+                            background: $fdYellow;
+                        }
+                    }
+                }
+                .ems-form-obj{
+                    margin-bottom: 30px;
+                    span[id$="lbfUYE_BENIHATIRLA_FL"]{ font-size: 13px; color: #727272; }
+                }
+            }
+            &-checkbox{
+                .ems-form-obj{
+                    margin-bottom: 20px;
+                    span:last-child{
+                        font-size: 12px;
+                        line-height: 15px;
+                        > a{
+                            color: $lDark;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            &-checkout, &-google{
+                display: none;
+            }
+            &-hidden{
+                display: none;
+            }
+        }
+        .ems-field-captcha{
+            &.is-completed{
+                .ems-form-obj-captcha{
+                    > div:last-child{
+                        input{
+                            border-color: $gold;
+                        }
+                    }
+                }
+            }
+        }
+        .ems-field:empty {
+            display: none;
+        }
+        [id$="plhLoginSifreUnut1"] {
+            text-align: right;
+            a{
+                font-size: 12px;
+                color: #3f434f;
+                text-decoration: underline;
+                &:hover{
+                    color: $gold;
+                }
+            }
+        }
+        input[id$="CEPTELEFONALAN"] {
+            width: 25% !important;
+            text-align: center;
+            border-left: 1px solid #ecedee;
+            border-right:1px solid #ecedee; 
+        }
+        input[id$="CEPTELEFONALAN"] + input[id$="CEPTELEFON"] {
+            width: 75% !important;
+            float: right;
+        }
+        .ems-login-error {
+            span {
+                font-size: 14px;
+                color: #fff;
+                padding: 15px;
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    input[type="text"], input[type="password"], input[type="file"], select, textarea, .dropdown > span {
+        height: 48px;
+        line-height: 36px;
+    }
+
+    .sStylerMainWrp {
+        &.sStylerWrp_select {
+            .sStylerWrp {
+                line-height: 36px; 
+                height: 48px;
+            }
+        }
+    }
+
+    .ems-form{
+        &-inner{
+            .ems-field{
+                .ems-form-obj-captcha{
+                    > div:last-child{
+                        flex-wrap: wrap;
+                        align-items: center;
+                        img {order: 2; margin-top: 10px; margin-left: 10px;}
+                        span{order: 1;}
+                    }
+                }
+            }
+        }
+    }
+}

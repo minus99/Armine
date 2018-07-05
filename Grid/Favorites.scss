@@ -1,0 +1,266 @@
+.ems-page {
+    &-member{
+        .ems-page-default{
+            .ems-page-favorites-empty,
+            .ems-page-order-empty{display: none;}
+            &-favorites{
+                max-width: 1025px !important;
+                div[id$="plhFavoriKayitYok1"]{
+                    background: none;
+                    padding: 0;
+                    color: #3f434f;
+                    line-height: normal;
+                    > span{
+                        .ems-page-favorites-empty{display: block;}
+                        &:empty{display: none;}
+                        display: block;
+                        text-align: center;
+                        .ems-page-favorites-empty{
+                            .favori-ico{
+                                width: 90px;
+                                height: 90px;
+                                background-color: #d9b993;
+                                border: solid 2px #3f434f;
+                                border-radius: 100%;
+                                display: inline-block;
+                                margin-top: 20px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                display: table;
+                                table-layout: fixed;
+                                text-align: center;
+                                .icon-ico_hearth{
+                                    display: table-cell;
+                                    vertical-align: middle;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                                .icon-ico_hearth, .icon-ico_hearth:before{
+                                    font-size: 40px;
+                                }
+                            }
+                            .favori-icon{
+                                width: 86px;
+                                background-color: #ffffff;
+                                border: solid 1px #ecedee;
+                                display: table;
+                                margin-top: 20px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                padding-top: 8px;
+                                padding-bottom: 8px;
+                                .icon-ico_hearth, span{
+                                    display: block;
+                                    padding-top: 5px;
+                                    padding-bottom: 5px;
+                                }
+                                .icon-ico_hearth, .icon-ico_hearth:before{
+                                    font-size: 16px;
+                                }
+                            }
+                            .big-text,
+                            .small-text{
+                                display: block;
+                                margin-top: 20px;
+                            }
+                            .big-text{
+                                font-family: $dRegular;
+                                font-size: 36px;
+                            }
+                            .small-text{
+                                font-family: $regular;
+                                font-size: 12px;
+                                line-height: 22px;
+                                max-width: 270px;
+                                margin-left: auto;
+                                margin-right: auto
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .ems-grid-favorites{
+            .ems-grid-row{
+                background: #fff;
+                margin-bottom: 10px;
+                padding-top: 0;
+                padding-bottom: 0;
+                > div{
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+                .col-1{
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                .ems-grid-content{
+                    width: 90%;
+                    &-inner{
+                        display: table;
+                        table-layout: fixed;
+                        width: 100%;
+                        > div{
+                            display: table-cell;
+                            vertical-align: middle;
+                            padding-left: 0;
+                            padding-right: 0;
+                            flex: inherit;
+                            max-width: inherit;
+                            text-align: center;
+                        }
+                        .col-2{width:20%;}
+                        .col-3{width:120px; padding-right: 10px; position: relative;}
+                        .col-4{width:100px;}
+                        .col-5{width:20%;}
+                        .col-6{
+                            width:30%;
+                            .ems-grid-report-inner{
+                                display: table;
+                                table-layout: fixed;
+                                width: 100%;
+                                > div{
+                                    display: table-cell;
+                                    vertical-align: middle;
+                                }
+                                a.btnDefault{
+                                    span{
+                                        color: $lDark;
+                                    }
+                                }
+                                a.btnFavoriListeSil{
+                                    span{
+                                        color: #ff566b;
+                                    }
+                                }
+                            }
+                        }
+                        .ems-grid-piece{
+                            > div{
+                                position: relative;
+                                max-width: 120px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                border: 1px solid $border;
+                                &:before{
+                                    content:'Adet';
+                                    font-family: $regular;
+                                    font-size: 14px;
+                                    color: #87888e;
+                                    display: inline-block;
+                                    position: absolute;
+                                    left: 10px;
+                                    top: 50%;
+                                    margin-top: -6px;
+                                    z-index: 1;
+                                }
+                            }
+                        }
+                        .ems-grid-option{
+                            .sStylerMainWrp.sStylerWrp_select{
+                                max-width: 120px;
+                                .sStylerWrp{
+                                    padding-left: 5px;
+                                    padding-right: 5px;
+                                    height: 40px;
+                                    line-height: 28px;
+                                    text-align: center;
+                                    border: 1px solid #ecedee;
+                                    &:before{
+                                        content:'Beden';
+                                        font-family: $regular;
+                                        font-size: 14px;
+                                        color: #87888e;
+                                        display: inline-block;
+                                        float: left;
+                                        position: relative;
+                                        left: 10px;
+                                    }
+                                }
+                            }
+                            div.urunListe_secenek1 {
+                                display: none;
+                                .dropdown-trigger{display: none;}
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .ems-page {
+        &-member{
+            .ems-grid-favorites{
+                .ems-grid-row{
+                    .ems-grid-content{
+                        &-inner{
+                            @include flex();
+                            table-layout: inherit;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            padding: 15px 20px;
+                            > div{
+                                width: 50%;
+                            }
+                            .col-2{width: 50%; order: 1; text-align: left;}
+                            .col-5{width: 50%; order: 2; text-align: right;}
+                            .col-3{width: 50%; order: 3; text-align: left; padding-right: 5px; margin-top: 10px;}
+                            .col-4{width: 50%; order: 4; text-align: right; padding-left: 5px; margin-top: 10px;}
+                            .col-6{width: 100%; order: 5; text-align: center;}
+                            .ems-grid-option .sStylerMainWrp.sStylerWrp_select,
+                            .ems-grid-piece > div{max-width: 100%;}
+                            .ems-grid-piece > div:before{font-size: 12px; margin-top:-5px;}
+                            .ems-grid-option .sStylerMainWrp.sStylerWrp_select{
+                                .sStylerWrp{
+                                    &:before{
+                                        left: 0;
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                            .ems-grid-report-inner{
+                                margin-top: 10px;
+                                .ems-grid-report-btn1{text-align: left;}
+                                .ems-grid-report-btn2{text-align: right;}
+                                > div{
+                                    .btnDefault {
+                                        padding-top: 10px;
+                                        padding-bottom: 10px;
+                                        &.btnSepeteAtFavori{text-align:left;}
+                                        &.btnFavoriListeSil{text-align:right;}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .ems-page {
+        &-member{
+            .ems-page-default{
+                &-favorites{
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+            .ems-grid-favorites{
+                .ems-grid-row{
+                    .ems-grid-content{
+                        &-inner{
+                            padding:10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

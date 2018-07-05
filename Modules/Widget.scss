@@ -1,0 +1,199 @@
+.widget{
+    display: none;
+    &-active{
+        display: block;
+    }
+    &.visilabs-widget{
+        .swiper-pagination{ display:none; }
+    }
+    .swiper-title{
+        span{
+            display: block;
+            text-align: center;
+            font-size: 48px;
+            text-align: center;
+            font-family: $medium;
+            color: $lDark;
+            padding-bottom: 20px;
+        }
+    }
+    .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-pagination{
+        display: none;
+    }
+    &.widget-new-shoes, &.widget-clothing {
+        .swiper-inner {
+            overflow: hidden !important;
+            position: relative; 
+        }
+    }
+    
+    ul.emosInfinite{
+        .ems-prd{
+            width: 25%;
+            padding: 0;
+            &-content{
+                padding-bottom: 0;
+            }
+            &-group{
+                display: none;
+            }
+            &-color-info{display: none;}
+            &-content{
+                min-height: 110px;
+                max-height: 110px;
+            }
+            &-inner{
+                padding: 5px;
+                &:before{display: none;}
+                &:hover{
+                    .ems-prd-content-mask{margin-top: 0;}
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpointXSM){
+    .widget{
+        &.items-1,
+        &.items-2,
+        &.items-3{
+            .swiper-wrapper{justify-content: center;}
+        }
+    }
+}
+
+.widget-pagecart{
+    ul.emosInfinite{
+        .ems-prd{
+            &-content{
+                min-height: 160px;
+                max-height: 160px;
+            }
+            &-icons{
+                min-height: 25px;
+            }
+            &-add-cart{
+                display: block;
+                .urunListe_sepetGrup{
+                    .urunListe_adet{display: none;}
+                    .urunListe_sepet{
+                        table{
+                            display: table !important;
+                            text-align: left;
+                            .btnSepeteAt{
+                                margin-top: 20px;
+                                padding: 13px 25px 13px 25px;
+                                width: auto;
+                                background: $lDark;
+                                span{
+                                    color: #fff;
+                                    .icon-ico_plus{
+                                        width: 5px;
+                                        height: 5px;
+                                        display: inline-block;
+                                        margin-right: 7px;
+                                        position: relative;
+                                        top: -2px;
+                                    }
+                                    .icon-ico_plus, .icon-ico_plus:before{
+                                        font-weight: bold;
+                                        font-size:5px;
+                                        color: #fff;
+                                    }
+                                }
+                                &:hover{
+                                    background: $gold;
+                                    span{
+                                        color: $lDark;
+                                        .icon-ico_plus, .icon-ico_plus:before{
+                                            color: $lDark;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .urunListe_stokHaberci{
+                    table{
+                        display: table !important;
+                        text-align: left;
+                        .btnStokHaberci{
+                            padding: 13px 25px 13px 25px;
+                            width: auto;
+                            margin-top: 20px;
+                            background: $lDark;
+                            span{
+                                color: #fff;
+                                .icon-ico_plus{
+                                    width: 5px;
+                                    height: 5px;
+                                    display: inline-block;
+                                    margin-right: 7px;
+                                    position: relative;
+                                    top: -2px;
+                                }
+                                .icon-ico_plus, .icon-ico_plus:before{
+                                    font-size:8px;
+                                    color: #fff;
+                                    font-weight: bold;
+                                }
+                            }
+                            &:hover{
+                                background: $gold;
+                                span{
+                                    color: $lDark;
+                                    .icon-ico_plus, .icon-ico_plus:before{
+                                        color: $lDark;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .widget{
+        overflow: hidden;
+        .swiper-title{
+            span{
+                font-size: 30px;
+                margin-top: 20px;
+                padding-top: 40px;
+                padding-bottom: 10px;
+                border-top: solid 1px #ecedee;
+            }
+        }
+        .swiper-inner{
+            overflow: visible;
+        }
+        ul.emosInfinite{
+            .ems-prd{
+                width: 50%;
+                &-inner{
+                    &:before{display: none;}
+                }
+                &-content{
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .swiper-button-next,
+        .swiper-button-prev{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .widget .emosInfinite .ems-prd{width:135px !important;}
+}

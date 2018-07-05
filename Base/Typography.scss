@@ -1,0 +1,10 @@
+@include fontFace('regular', '/styles/fonts/raleway/regular/RalewayRegular', normal);
+@include fontFace('medium', '/styles/fonts/raleway/light/RalewayLight', normal);
+@include fontFace('light', '/styles/fonts/raleway/light/RalewayLight', normal);
+@include fontFace('bold', '/styles/fonts/raleway/semi-bold/RalewaySemiBold', normal);
+@include fontFace('sBold', '/styles/fonts/raleway/semi-bold/RalewaySemiBold', normal);
+
+@include fontFace('dRegular', '/styles/fonts/didot/regular/Didot', normal);
+@include fontFace('dItalic', '/styles/fonts/didot/italic/DidotItalic', normal);
+
+@include fontFace('tl', '/styles/fonts/tl/abakutlsymsans', normal);

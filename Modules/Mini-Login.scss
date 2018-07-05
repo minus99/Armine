@@ -1,0 +1,414 @@
+.mod-mini-login{
+    &-header{
+        cursor: pointer;
+        font-family: $regular;
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding: 10px 20px;
+        text-align: center;
+        @include transition(all 333ms ease);
+        > span[id$="lbhKUTU_HESABIM"]{
+            display: inline-block;
+            max-width: 150px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 5px;
+            padding-left: 25px;
+            position: relative;
+            &:before{
+                font-family: 'icomoon';
+                content: '\e900';
+                font-size: 19px;
+                display: inline-block;
+                vertical-align: middle;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 19px;
+                height: 19px;
+                border-radius: 100%;
+                z-index: 1;
+            }
+            &:empty{display: none;}
+        }
+        > span[id$="lbfkutuUyeGiris1"]{
+            span, .icon-ico_account-login{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            span{
+                margin-top: 2px;
+                margin-left: 2px;
+            }
+            .icon-ico_account-login{
+                font-size: 20px;
+                &:before{
+                    font-size: 20px;
+                }
+            }
+            &:empty{display: none;}
+        }
+    }
+    &-body{
+        position: fixed;
+        top: 40px;
+        width: 320px;
+        height: calc(100vh - 40px);
+        z-index: 1;
+        right: 0;
+        @include setTransform(translateX(100%));
+        @include transition(all 0.5s ease);
+        transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+        background: $darkBlack;
+        .mini-login-close{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 18px;
+            height: 18px;
+            z-index: 1;
+            cursor: pointer;
+            i, i:before{
+                font-size: 18px;
+                color: #ffffff;
+            }
+        }
+        .sub {
+            display: none;
+            padding: 20px;
+            .ems-message{
+                display: table;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+                &:empty{
+                    display: none;
+                }
+            }
+            .sub-title{
+                font-size: 36px;
+                color: #fff;
+                font-family: $dRegular;
+                padding-top: 10px;
+                padding-bottom: 20px;
+                text-align: left;
+                display: block;
+            }
+            .ems-form{
+                &-inner{
+                    .ems-field{
+                        &.text{
+                            border-color:$gold;
+                        }
+                        &.text-2{
+                            margin-bottom:10px;
+                        }
+                        .seperator {
+                            display: none;
+                            span{
+                            font-size: 14px;
+                            color: #fff;
+                            font-family: $regular;
+                            display: block;
+                            padding: 15px 0 15px 0;   
+                            }
+                        }
+                        .ems-form-obj{
+                            input{
+                                background: #f5f5f5;
+                            }
+                        }
+                        #lnkSifremiUnuttum{
+                            display: inline-block;
+                            span{
+                                font-size: 12px;
+                                color: #fff;
+                                font-family:$regular;
+                                text-decoration: underline;
+                                @include transition(all .5s ease);
+                            }
+                            &:hover{
+                                span{color: $gold;}
+                            }
+                        }
+                        &-submit{
+                            @include flexDirection(column);
+                            .btnKutuLogin{
+                                background: $lDark;
+                                border: 1px solid #fff;
+                                color: #fff;
+                                margin-bottom: 20px;
+                                margin-top: 10px;
+                                span{
+                                    @include transition(all 0.2s ease);
+                                }
+                                &:hover{
+                                    background: #fff;
+                                    border-color: #fff;
+                                    color: $gold;
+                                    span{
+                                        color: $lDark;
+                                    }
+                                }
+                            }
+                        }
+                        &-free{
+                            span[id$="lbflnkUyeOlmak"]{
+                                width: 100%;
+                                display: block;
+                                border-top: solid 1px #4b4f5d;
+                                margin-top: 30px;
+                                padding-top: 30px;
+                                a{
+                                    background: $gold;
+                                    color: $lDark;
+                                    font-size: 14px;
+                                    display: block;
+                                    font-family: $sBold;
+                                    padding: 18px 10px;
+                                    &:hover{
+                                        background: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .kutuUyeGiris_profilFoto {
+                display: none;
+            }
+            .ems-user-info{
+                span[id$="lbfUYE_SAYIN"]{
+                    span{
+                        margin-bottom: 20px;
+                        font-family:$dRegular;
+                        font-size:36px;
+                        color: #fff;
+                        padding:20px 10px 10px;
+                        display: block;
+                    }
+                }
+            }
+            .ems-user-pages{
+                > div {
+                    margin-top: 20px;
+                    &:first-child{
+                        margin-top: 0;
+                    }
+                    a{
+                        display: inline-block;
+                        padding:10px;
+                        letter-spacing: $ltSpace;
+                        color: #fff;
+                        font-size: 14px;
+                        letter-spacing: $ltSpace;
+                        &.btnKutuLogout{
+                            background: none;
+                            color: #fff;
+                            font-size: 14px;
+                            text-align: left;
+                            &:hover{
+                                background: none;
+                            }
+                        }
+                        &:hover{
+                            color: $gold;
+                         }
+                    }
+                }               
+            }
+        }
+    }
+    &-footer{ display: none; }
+}
+
+.vailLogin{z-index:15;}
+
+//////////////////////////////////
+body.ems-logoff{
+    .mod-mini-login{
+        &-body{
+            .sub.logoff{
+                display: block;
+            }
+        }
+    }
+}
+body.ems-login{
+    .mod-mini-login{
+        &-body{
+            .sub.login{
+                display: block;
+            }
+        }
+    }
+}
+body.mini-login-ready{
+    overflow: hidden;
+}
+
+//////////////////////////////////
+body.ems-logoff.mini-login-ready{
+    .mod-mini-login{
+        &-body{
+            @include setTransform(translateX(0));
+            .sub.logoff{
+                display: block;
+            }
+        }
+    }
+    .vailLogin{ opacity: .4; visibility: visible; }
+}
+body.ems-login.mini-login-ready{
+    .mod-mini-login{
+        &-body{
+            @include setTransform(translateX(0));
+            .sub.login{
+                display: block;
+            }
+        }
+    }
+    .vailLogin{ opacity: .4; visibility: visible; }
+}
+
+@media screen and (min-width: $breakpointXSM) and (max-width: 1366px){
+    .mod-mini-login-body .sub{
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 40px);
+        overflow-x: hidden;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .mod-mini-login{
+        &-header{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: relative;
+            > span[id$="lbhKUTU_HESABIM"]{
+                color: #fff;
+            }
+            > span[id$="lbfkutuUyeGiris1"]{
+                span{
+                    color:#fff;
+                }
+                .icon-ico_account-login{
+                    display: none;
+                    &:before{
+                        color: #fff;
+                    }
+                }
+                .mobile-user-popup-close{
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    left: 15px;
+                    top: 50%;
+                    margin-top: -12px;
+                    padding: 5px;
+                    z-index: 1;
+                    i, i:before{
+                        font-size: 15px;
+                    }
+                    i:before{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        &-body{
+            -moz-transform: inherit;
+            -webkit-transform: inherit;
+            transform: inherit;
+            transition-timing-function: inherit;
+            transition: inherit;
+            top: 60px;
+            right: inherit;
+            padding: 20px;
+            width: 100%;
+            height: calc(100% - 60px);
+            overflow-x: hidden;
+            z-index: auto;
+            .mini-login-close{display: none;}
+            .sub{
+                padding: 0;
+                .sub-title{
+                    display: none;
+                }
+                .ems-user-info{
+                    position: relative;
+                    display: block;
+                    font-size: 14px;
+                    color: #fff;
+                    .member-account{display: none;}
+                    .mobile-user-popup-close{
+                        cursor: pointer;
+                        position: absolute;
+                        left: 8px;
+                        width: 40px;
+                        text-align: center;
+                        padding: 5px;
+                        top: 21px;
+                        height: 30px;
+                    }
+                    span[id$="lbfUYE_SAYIN"]{
+                        display: table;
+                        width: 100%;
+                        position: relative;
+                        padding-top: 10px;
+                        padding-bottom: 15px;
+                        padding-left: 35px;
+                        margin-bottom: 20px;
+                        border-bottom: 1px solid #4b4f5d;
+                        .mobile-user-popup-close{
+                            top: 50%;
+                            left: 0;
+                            width: 30px;
+                            height: 25px;
+                            text-align: left;
+                            margin-top: -14px;
+                            i, i:before{
+                                font-size: 15px;
+                                color: #fff;
+                            }
+                        }
+                        span{
+                            font-size: 16px;
+                            font-family: $sBold;
+                            padding: 0;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    body.ems-login{
+        .mod-mini-login-header{ display: none; }
+        .mod-mini-login-body{top: 0; height: calc(100% - 10px); }
+    }
+
+    body.mobi-login-ready{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        .ems-container-full-top{
+            .ems-col.right .ems-cell.right{
+                left: 0;
+            }
+        }
+    }
+}

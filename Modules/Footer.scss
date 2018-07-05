@@ -1,0 +1,309 @@
+.site-footer{
+    background-color: $darkBlack;
+    &-cover{
+        position: relative;
+    }
+    &-top{
+        width: 100%;
+        display: table;
+        table-layout: fixed;
+        margin: $marginAuto;
+        .ems-col {
+            display: inline-block;
+            vertical-align: top;
+            &-full{
+                display: block;
+                width: 100%;
+            }
+            &-center{
+                max-width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 75px;
+                padding-bottom: 50px;
+                @include flex();
+                @include flexDirection(row);
+                justify-content: space-between;
+                .ems-col{
+                    @include flex();
+                    @include flexDirection(column);
+                    justify-content: space-between;
+                }
+            }
+        }
+        .ems-col-1{width:75%;}
+        .ems-col-2{width:25%;}
+    }
+    &-menu, &-social{
+        width: 100%;
+        display: table;
+    }
+    &-menu{
+        ul{
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 7%;
+            &:first-child{margin-left: 0;}
+            li{
+                > *{
+                    color: #fff;
+                    font-size: 18px;
+                    display: inline-block;
+                }
+                &.title{
+                    a{
+                        padding: 0;
+                        margin-bottom: 20px;
+                        pointer-events: none;
+                        span{
+                            font-family: $sBold;
+                            letter-spacing: 2.3px;
+                        }
+                    }
+                }
+                a{
+                    font-family: $regular;
+                    font-size: 14px;
+                    padding:10px 0;
+                    &:hover{
+                        color: $gold;
+                    }
+                }
+            }
+        }
+    }
+    &-redirect{
+        &-btn{
+            display: block;
+            border: solid 1px #ffffff;
+            color: $lGray;
+            letter-spacing: $ltSpace;
+            padding: 17px 10px 16px 10px;
+            text-align: center;
+            margin-top: 20px;
+            &:hover{
+                border-color: $gold;
+                color: $gold;
+            }
+        }
+    }
+    &-social{
+        > ul{
+            @include flex();
+            align-items: center;
+            justify-content: flex-end;
+            > li{
+                display: inline-block;
+                vertical-align: middle;
+                width: 23%; 
+                text-align: right;
+                a{
+                    display: inline-block;
+                    padding: 5px 0;
+                    text-align: right;
+                    i{
+                        display: block;
+                        font-size: 23px;
+                        width: 23px;
+                        &:before{
+                            font-size: 23px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-copyright{
+        background-color: $lDark;
+        text-align: left;
+        padding-top: 40px;
+        position: relative;
+        > *{
+            font-family: $regular;
+            color: #fff;
+            font-size: 12px;
+        }
+        p{ margin:0; }
+    }   
+}
+
+.kutuBulten{
+   background:url(#{$baseHref + "/images/frontend/bulten-cover.png"}) top left repeat #d9b993;
+   .mod-newsletter{
+    display: table;
+    margin: 0 auto;
+    width: auto;
+    padding: 60px 0;
+    &-header{
+        span{
+            font-family: $sBold;
+            letter-spacing: $ltSpace;
+        }
+    }
+    &-body{
+        .ems-form{
+            .ems-field{
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0;
+                &.text{
+                    border: none;
+                    background: none;
+                    max-width: 410px;
+                    input{
+                        height: 80px;
+                        line-height: 70px;
+                        background: none;
+                        font-family: $dRegular;
+                        font-size: 36px;
+                        border-bottom: solid 1px #3f434f;
+                            &::-webkit-input-placeholder{
+                                color: #3f434f;
+                            }
+                            &:-moz-placeholder{color: #3f434f;}
+                        }
+                    }
+                    &.submit{
+                        margin-bottom: 0;
+                        position: absolute;
+                        top: 50%;
+                        right: 20px;
+                        width: auto;
+                        height: auto;
+                        z-index: 1;
+                        margin-top: -20px;
+                        .btnBultenGonder{
+                            padding-top: 9px;
+                            padding-bottom: 9px;
+                            background: none;
+                            border: 1px solid #3f434f;
+                            &:hover{
+                                background: none;
+                            }
+                            span{
+                                font-size: inherit;
+                                i, i:before{
+                                    font-size: 20px;
+                                }
+                                i:before{
+                                    color: #3f434f;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .site-footer{
+        &-redirect{
+            display: none;
+        }
+        &-top{
+            @include flexDirection(column);
+            .ems-col{
+                &-center{
+                    @include flexDirection(column);
+                    padding: 30px 20px;
+                    .ems-col{
+                        width: 100%;
+                    }
+                    .ems-col-1{
+                        order: 2;
+                    }
+                    .ems-col-2{
+                        order: 1;
+                    }        
+                }
+            }
+        }
+        &-social{
+            > ul{
+                justify-content: space-between;
+                > li{
+                    text-align: center;
+                    width: 25%;
+                    a{
+                        padding-top: 0;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+        &-menu{
+            ul{
+                width: 50%;
+                margin-left: 0;
+                margin-top: 30px;
+                li{
+                    display: none;
+                    &.title{
+                        display: block;
+                        text-align: center;
+                        a{
+                            margin-bottom: 0;
+                            pointer-events: inherit;
+                            span{
+                                letter-spacing: 2px;
+                                margin-bottom: 0;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-copyright{
+            padding-top: 30px;
+            text-align: center;
+        }
+    }
+    .kutuBulten{
+        .mod-newsletter{
+            padding: 30px;
+            &-header{
+                text-align: center;
+                margin-bottom: 10px;
+                span{
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+            &-body{
+                .ems-form{
+                    .ems-field{
+                        max-width: 100%;
+                        &.text{
+                            input{
+                                font-size: 22px;
+                                padding-left: 0;
+                                padding-right: 35px;
+                                line-height: 40px;
+                                height: 50px;
+                            }
+                        }
+                        &.submit{
+                            margin-top: -15px;
+                            right: 0;
+                            .btnBultenGonder{
+                                padding: 6px 5px;
+                                &:hover{
+                                    background: none;
+                                }
+                                span{
+                                    i, i:before{
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

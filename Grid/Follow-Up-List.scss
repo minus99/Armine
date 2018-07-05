@@ -1,0 +1,116 @@
+.ems-page {
+    &-member{
+        .ems-page-default{
+            &-follow-list{
+                .ems-grid-follow-price,
+                .inner-title{display:none;}
+                .price-report{
+                    display: none;
+                    .ems-message{
+                        margin-bottom: 20px;
+                    }
+                }
+                .stock-report{
+                    .inner-title{
+                        display:block;
+                        span{
+                            font-family: $sBold;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+        .ems-grid-default-stock{
+            .ems-grid-row {
+                padding: 0;
+                background: #fff;
+                > div{
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+                .col-1{padding-left: 0; padding-right: 0; }
+                .ems-grid-content{
+                    width: 90%;
+                    &-inner{
+                        display: table;
+                        table-layout: fixed;
+                        width: 100%;
+                        > div{
+                            display: table-cell;
+                            vertical-align: middle;
+                            padding-left: 10px;
+                            padding-right: 0;
+                            padding-top: 15px;
+                            padding-bottom: 15px;
+                            flex: inherit;
+                            max-width: inherit;
+                            text-align: center;
+                        }
+                        .col-2{width: 30%;}
+                        .col-3{width: 25%;}
+                        .col-4{width: 25%;}
+                        .col-5{
+                            width: 20%;
+                            .btnTakipListeStokSil{
+                                span{
+                                    color: #ff566b;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.empty-layout{
+            .ems-page-default-follow-list{
+                .stock-report .inner-title{display: none;}
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .ems-page {
+        &-member{
+            .ems-page-default{
+                &-follow-list{
+                    padding-left: 0;
+                    padding-right: 0;
+                    .report-holder{
+                        .inner-title{display:none;}
+                    }
+                }
+            }
+            .ems-grid-default-stock{
+                .ems-grid-row{
+                    .ems-grid-content{
+                        &-inner{
+                            @include flex();
+                            table-layout: inherit;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            padding:10px;
+                            > div{
+                                width: 50%;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                            }
+                            .col-2{width:50%; order:1; text-align:left;}
+                            .col-3{width:50%; order:3; text-align:left; margin-top: 10px;}
+                            .col-4{width:50%; order:2; text-align:right;}
+                            .col-5{
+                                width:50%;
+                                order:4;
+                                margin-top: 10px;
+                                .btnTakipListeStokSil{
+                                    text-align:right;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

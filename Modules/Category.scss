@@ -1,0 +1,281 @@
+.kutuKategori{
+    .kutuHeaderKategori{
+        display: none;
+        > span{
+            a.btnCatShow{
+                background: none;
+                padding:0;
+                margin-bottom: 10px;
+                text-align: left;
+                font-family: inherit;
+                font-size: inherit;
+                text-transform: inherit;
+                &:hover{
+                    span{
+                        color: inherit;
+                    }
+                }
+                span.mobile-element {
+                    display: none;
+                    font-family: $dRegular;
+                    font-size: 36px;
+                }
+                &:after{
+                    font-family: 'icomoon';
+                    content: '\e907';
+                    font-size: 14px;
+                    width: 14px;
+                    height: 14px;
+                    color: #87888e;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -7px;
+                    right: 0;
+                }
+            }
+        }
+    }
+    &.kapali{
+        .kutuHeaderKategori{
+            > span{
+                a.btnCatShow{
+                    &:after{
+                        content: '\e90a';
+                    }
+                }
+            }
+        }
+    }
+    ul.menuKategori{
+        > li{
+            position: relative;
+            > b{
+                position: absolute;
+                width: 100%;
+                height: 30px;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                cursor: pointer;
+            }
+            > a{ 
+                font-family: $dRegular;
+                font-size: 26px;
+                margin-bottom: 10px;
+                display: block;
+                position: relative;
+                &:after{
+                    font-family: 'icomoon';
+                    content: '\e90a';
+                    font-size: 14px;
+                    width: 14px;
+                    height: 14px;
+                    color: #87888e;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -7px;
+                    right: 0;
+                }
+            }
+            &.opened{
+                > a{
+                    &:after{
+                        content: '\e907';
+                    }
+                }
+            }
+            .filter-count{display: none;}
+             > ul{
+                li{
+                    b{
+                        display: none;
+                    }
+                    a{
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding: 10px 0 10px 0;
+                        position: relative;
+                        font-family: $regular;
+                        font-size: 13px;
+                        color: $lDark;
+                        @include transition(all .2s ease)
+                    }
+                    .filter-count{
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding-left: 3px;
+                        font-family: $regular;
+                        font-size: 13px;
+                        color: $lDark;
+                        @include transition(all .2s ease)
+                    }
+                    &.sub{ display: block; }
+                    &.act , &:hover{
+                        a, .filter-count{color:$gold;}
+                    }
+                }
+             }
+        }
+    }
+}
+
+.kutuSolMenuTree{
+    margin-left: auto;
+    margin-right: auto;
+    .sStylerMainWrp.sStylerWrp_select,
+    .kutuHeaderSolMenuTree{display:none;}
+
+    .kutuBodyDefault{
+        > ul{
+            > li{
+                b{display:none;}
+                > a{
+                    display: block;
+                    font-family: $dRegular;
+                    font-size: 26px;
+                    color: $lDark;
+                    margin-bottom: 20px;
+                }
+                > ul{
+                    display: table;
+                    width: 100%;
+                    > li{
+                        text-align: left;
+                        position: relative;
+                        > a{
+                            display: block; 
+                            font-family: $regular;
+                            font-size: 13px;
+                            padding: 15px 10px 15px 0;
+                            text-transform: uppercase;
+                        }
+                        &.act, &:hover{
+                            color: $gold;
+                        }
+                        &.sel.human-resources{
+                            > a{
+                                color: $gold;    
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .kutuKategori{
+        padding: 10px 0 10px 10px;
+        .kutuHeaderKategori{
+            span{
+                a{
+                    &.btnCatShow{
+                        background: #fff;
+                        text-align: left;
+                        padding: 10px 40px 10px 10px;
+                        span{
+                            font-family: $sBold;
+                            font-size: 18px;
+                        }
+                        &:hover{
+                            span{
+                                color: $lDark;
+                            }
+                        }
+                        &:after{
+                            font-family:'icomoon';
+                            content:'\e921';
+                            font-size: 14px;
+                            position: absolute;
+                            top: 50%;
+                            right: 20px;
+                            width: 14px;
+                            height: 14px;
+                            margin-top: -7px;
+                            color: #87888e;
+                            @include setTransform(rotate(90deg));
+                        }
+                    }
+                    span{
+                        &:first-child{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &.kapali{
+                span{
+                    a{
+                        &.btnCatShow{
+                            &:after{
+                                @include setTransform(rotate(0));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ul.menuKategori{
+            > li{
+                /*> a{ display: none; }*/
+                > a{
+                    padding-left: 10px;
+                    padding-right: 30px;
+                    &:after{
+                        right: 20px;
+                    }
+                }
+                > ul{
+                    margin-top: 10px;
+                    li{
+                        a{
+                            padding-left: 10px;
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .kutuSolMenuTree{
+        max-width: 100%;
+        position: fixed;
+        width: 100%;
+        background: #f6f7f9;
+        height: auto;
+        z-index: 5;
+        .kutuHeaderSolMenuTree{
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-family: "sBold";
+            color: #87888e;
+            z-index: 1;
+        }
+        .sStylerMainWrp.kutu-body-sol-menu-selecbox.sStylerWrp_select{
+            display: block;
+            .sStylerWrp{
+                border: none;
+                background: #f6f7f9;
+                border-bottom: 1px solid #ecedee;
+                font-family: $dRegular;
+                color: #3f434f;
+                font-size: 24px;
+                padding: 30px 20px 15px 20px;
+                height: 65px;
+                line-height: 1;
+                &:after{
+                    right: 15px;
+                    font-size: 10px;
+                    margin-top: -5px;
+                }
+            }
+        }
+        .kutuBodyDefault{display:none;}
+    }
+}

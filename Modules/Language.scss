@@ -1,0 +1,81 @@
+.mod-lang {
+    position: relative;
+    &-header, &-footer{
+        display: none;
+    }
+    .dropdown{
+        > span{
+            cursor: pointer;
+            background: none;
+            letter-spacing: $ltSpace;
+            font-family: $regular;
+            font-size: 14px;
+            border: none;
+            padding: 10px 20px 10px 20px;
+            line-height: inherit;
+            height: inherit;
+            display: inline-block;
+            > a{
+                display: inline-block;
+                vertical-align: middle;
+                > span{
+                    span, i{
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    span{
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        font-size: 14px;
+                        letter-spacing: $ltSpace;
+                    }
+                    i, i:before{
+                        font-size: 20px;
+                    }
+                }
+            }
+            > i{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            > i, i:before{
+                font-size: 12px;
+            }
+        }
+        &.opened{
+            .sub{
+                display: block;
+            }
+        }
+    }
+    .sub{
+        position: absolute;
+        top: 30px;
+        left: 5px;
+        z-index: 10;
+        background: $rgbBg;
+        width: 110px;
+        padding: 10px 10px;
+        li{
+            a{
+                display: block;
+                padding: 10px 10px;
+                border-top: 1px solid #979797;
+                span{
+                    display: block;
+                    img{display: inline-block; margin-right: 20px; }
+                    b{
+                        display: inline-block !important;
+                        color: #fff;
+                        font-family:$bold;
+                        font-size: 13px;
+                        font-weight: normal;
+                    }
+                }
+            }
+            &:first-child{
+                a{ border: none; }
+            }
+        }
+    }    
+}
