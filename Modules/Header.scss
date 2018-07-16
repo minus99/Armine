@@ -839,7 +839,7 @@ body.ems-logoff{
         min-height: 50px;
         &-wrapper{
             position: inherit;
-            z-index: inherit;
+            z-index: initial;
             height: auto;
             background: none;
         }
