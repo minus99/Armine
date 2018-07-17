@@ -114,15 +114,18 @@ span.checkbox{
                 display: none;
             }
             .ems-form-label {
+                flex-grow: 1;
+                flex-basis: 32%;
                 font-size: 14px;
                 color: $lDark;
-                padding-left: 15px;
+                padding-left: 10px;
                 &:empty {
                     display: none;
                 }
             }
             .ems-form-obj {
-                flex-grow: 1;
+                flex-grow: 2;
+                flex-basis: 68%;
                 padding-left: 10px;
                 &:empty {
                     display: none;
@@ -160,13 +163,14 @@ span.checkbox{
                 > div:last-child{
                     @include flex(); 
                     flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
                     width: 100%;
                     img {
-                        order: 1;
-                        margin-bottom: 20px;
+                        order: 2;
                     }
                     span{
-                        order: 2;
+                        order: 1;
                         font-size: 12px;
                         color: $lDark;
                     }
@@ -351,7 +355,7 @@ span.checkbox{
                     > div:last-child{
                         flex-wrap: wrap;
                         align-items: center;
-                        img {order: 2; margin-top: 10px; margin-left: 10px;}
+                        img {order: 2;}
                         span{order: 1;}
                     }
                 }
