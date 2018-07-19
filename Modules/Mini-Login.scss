@@ -267,6 +267,7 @@ body.ems-login.mini-login-ready{
     .mod-mini-login{
         &-body{
             @include setTransform(translateX(0));
+            opacity: 1;
             .sub.login{
                 display: block;
             }

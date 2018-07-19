@@ -714,6 +714,9 @@ body.ems-page-member-creating.ems-login{
             resize: none;
         }
         &.msgCaptcha{
+            div[id$="divCaptcha"]{
+                width: 100%;
+            }
             span[id$="lbfUYE_KONTROLKODU"]{
                 display: block;
                 margin-top: 15px;
