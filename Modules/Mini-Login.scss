@@ -61,7 +61,9 @@
         @include transition(all 0.5s ease);
         transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
         background: $darkBlack;
-        opacity: 0;
+        @media screen and (min-width: $breakpointXSM){
+            opacity: 0;
+        }
         .mini-login-close{
             position: absolute;
             top: 20px;
@@ -255,9 +257,11 @@ body.ems-logoff.mini-login-ready{
     .mod-mini-login{
         &-body{
             @include setTransform(translateX(0));
-            opacity: 1;
             .sub.logoff{
                 display: block;
+            }
+            @media screen and (min-width: $breakpointXSM){
+                opacity: 1;
             }
         }
     }
@@ -267,9 +271,11 @@ body.ems-login.mini-login-ready{
     .mod-mini-login{
         &-body{
             @include setTransform(translateX(0));
-            opacity: 1;
             .sub.login{
                 display: block;
+            }
+            @media screen and (min-width: $breakpointXSM){
+                opacity: 1;
             }
         }
     }
