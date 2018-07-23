@@ -2,7 +2,11 @@
     &-member{
         .ems-page-default{
             &-info{
-                .ems-message{margin-bottom: 20px;}
+                .ems-message{
+                    margin-bottom: 20px;
+                }
+                .ems-form-inner .ems-field .ems-form-label{width: 120px;}
+                .ems-form-inner .ems-field.bulletin .ems-form-label span{line-height: 20px;}
             }
             &-address{
                 position: relative;
