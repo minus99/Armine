@@ -302,6 +302,9 @@ ul.emosInfinite {
             max-width: 350px;
             width: 100%;   
         }
+        &-discount-1{
+            display: none;
+        }
         &-icons{
             > div{
                 &:empty{display: none;}
