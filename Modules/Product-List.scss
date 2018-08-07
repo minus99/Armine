@@ -11,7 +11,7 @@
         }
         .tableTitleArama{
             display: none;
-        }   
+        }
     }
 }
 
@@ -27,7 +27,7 @@
                 &-left{
                     width: 230px;
                     background: #f6f7f9;
-                    padding: 30px 20px 30px 20px; 
+                    padding: 30px 20px 30px 20px;
                 }
                 &-right{
                     position: inherit;
@@ -283,7 +283,7 @@
             &:hover{
                 span{
                     color: $gold;
-                }   
+                }
             }
         }
     }
@@ -296,11 +296,22 @@ ul.emosInfinite {
         padding-top: 10px;
         padding-left: 10px;
         padding-right: 10px;
+        &.spr1{
+            .ems-prd-discount-1{
+                display: block;
+                padding: 8px 10px;
+                position: absolute;
+                width: 100%;
+                background: #ff5f73;
+                color: #fff;
+                margin-top: -30px; 
+            }
+        }
         &-inner{
             position: relative;
             margin: 0 auto;
             max-width: 350px;
-            width: 100%;   
+            width: 100%;
         }
         &-discount-1{
             display: none;
@@ -362,7 +373,7 @@ ul.emosInfinite {
             min-height: 160px;
             max-height: 160px;
             overflow: hidden;
-            z-index: 2;    
+            z-index: 2;
         }
         &-color-info{
             height: 25px;
@@ -380,7 +391,7 @@ ul.emosInfinite {
                 }
             }
         }
-        &-group{ 
+        &-group{
             width: 100%;
             height: 45px;
             &-inner{
@@ -646,7 +657,7 @@ body.ems-product-list-empty-layout{
         &:hover{
             background: $gold;
         }
-    }   
+    }
 }
 
 //////////////////////////////////////
@@ -775,7 +786,7 @@ body.dortlu{
             padding-top: 0;
         }
     }
-    
+
     .ems-page{
         &-list{
             &-container{
@@ -841,7 +852,7 @@ body.dortlu{
             .mobile-element{
                 &-sort-btns{
                     display: table;
-                    width: 100%; 
+                    width: 100%;
                     > a{
                         display: table-cell;
                         vertical-align: middle;
@@ -1057,7 +1068,7 @@ body.dortlu{
     }
 
     .product-empty{
-        padding: 30px 20px;   
+        padding: 30px 20px;
     }
     .ems-product-empty-cat-suggest{
         > a{
