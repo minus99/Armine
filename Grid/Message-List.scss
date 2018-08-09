@@ -26,6 +26,18 @@
 }
 
 .ems-page-default{
+    .kutuHeaderDefault.kutuHeaderMesaj{
+        display: none;
+    }
+    .kutuBodyDefault.kutuBodyMesaj{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+    .kutuBodyDefault.kutuBodyMesaj div{
+        font-size: 18px;
+        font-weight: 700;
+    }
     &-message{
         div[id$="plhMesajYokLabel1"]{
             background: none;
