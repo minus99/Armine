@@ -1,7 +1,7 @@
 .ems-page {
     &-member{
-        .ems-page-default{
-            &-info{ 
+        .ems-page-default{ 
+            &-info{
                 .ems-message{
                     margin-bottom: 20px;
                 }
@@ -19,7 +19,7 @@
                     color: #3f434f;
                     padding: 0;
                     text-align: center;
-                    &:before{
+                    &:before{ 
                         width: 90px;
                         height: 90px;
                         background-color: #d9b993;

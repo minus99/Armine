@@ -1423,20 +1423,23 @@
                         width: 50%;
                         padding: 5%;
                         float: left;
+                        border-right: 1px solid $border;
                         tbody{
-                            @include flex();
-                            @include flexDirection(column);
+                            /*@include flex();
+                            @include flexDirection(column);*/
+                            display: block;
                         }
                         tr {
                             @include flex();
                             align-items: center;
                             background: #fff;
                             border: 1px solid $border;
-                            margin-top: 20px;
-                            padding-left: 15px;
+                            margin-bottom: 20px;
+                            padding-left: 10px;
                             &:first-child{margin-top: 0;}
                             &:last-child{display: none;}
-                            &:nth-child(3){width: 50%;}
+                            &:nth-child(2){width: 60%; float:left; margin-bottom: 20px;}
+                            &:nth-child(3){width: 35%; float:right; margin-bottom: 20px;}
                         }
                         th:empty, td:empty{
                             display: none;
@@ -1445,20 +1448,29 @@
                             text-align: left;
                         }
                         th {
-                            flex-grow: 1;
+                            /*flex-grow: 1;*/
                             font-weight: normal;
                             font-size: 14px;
                             color: $gray3;
-                            &.tableOdemeBilgiKrediKarti_thlbfODM_KKARTCVCNO{padding-right:15px;}
+                            &.tableOdemeBilgiKrediKarti_thlbfODM_KKARTCVCNO{/*padding-right:15px;*/}
                         }
                         td {
                             flex-grow: 4;
                             input {
                                 width: 100% !important;
+                                background: none;
                             }
                             select {
                                 color: $lDark;
                                 font-size: 14px;
+                            }
+                            .sStylerWrp {
+                                background: none;
+                                border: 0 !important;
+                                text-align: center;
+                                &:after {
+                                    font-size: 7px;
+                                }
                             }
                             &.tableOdemeBilgiKrediKarti_tddrpKSA_SPR_ID {
                                 select {
@@ -1478,9 +1490,11 @@
                                 flex-grow: 1;
                                 input {
                                     vertical-align: middle;
-                                    width: 50% !important;
+                                    width: 70% !important;
                                     border-right: 1px solid $eGray;
                                     border-left: 1px solid $eGray;
+                                    border: 0 !important;
+                                    padding: 10px 0 10px 5px
                                 }
                                 &nbsp{display:none;}
                                 > span {
@@ -1490,12 +1504,14 @@
                                     }
                                     display: inline-block;
                                     vertical-align: middle;
-                                    width: 35%;
+                                    width: 10%;
                                     color: $lDark;
                                     font-size: 14px;
-                                    text-align: center;
+                                    text-align: right;
                                     i, i:before{
-                                        font-size: 14px;
+                                        font-size: 11px;
+                                        position: relative;
+                                        right: 5px;
                                     }
                                 }
                             }
@@ -1539,6 +1555,16 @@
                                 }
                             }
                         }
+                        &:before {
+                            content: 'ÖDEME BİLGİLERİ';
+                            display: inline-block;
+                            font-size: 18px;
+                            margin-bottom: 25px;
+                            font-family: "sBold";
+                            float: left;
+                            order: 1;
+                            letter-spacing: 2px;
+                        }
                     }
         
                     /*taksit*/
@@ -1547,10 +1573,9 @@
                         vertical-align: top;
                         width: 50%;
                         padding: 5%;
-                        border-left: 1px solid $border;
                         float: right;
                         &:empty{
-                            display: none !important;
+                            /*display: none !important;*/
                         }
                         > img {
                             margin: 10px auto;
@@ -1579,20 +1604,52 @@
                                     padding-left: 0 !important;
                                     padding-right: 0 !important;
                                 }
+                                .rStyler {
+                                    cursor: pointer;
+                                    width: 18px;
+                                    height: 18px;
+                                    border: 1px solid $gray3;
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                    line-height: 18px;
+                                    text-align: center;
+                                    border-radius: 100%;
+                                    @include transition (background .2s ease);
+                                    &.checked {
+                                        width: 18px;
+                                        height: 18px;
+                                        background:$gold;
+                                        border-color:$darkBlack;
+                                    }
+                                }
+                                input {
+                                    display: none !important;
+                                }
                             }
                             .tableTitleOdemeTaksit {
                                 display: table-row;
                                 td {
-                                    font-family: $regular;
+                                    font-family: $sBold;
                                     font-size: 12px;
                                     padding: 10px 5px;
                                     color: $lDark;
                                     vertical-align: top;
+                                    color:$gray3; 
                                 }
                             }
                             .taksit_pesin td {
                                 color: $lDark;
                             }
+                        }
+                        &:before {
+                            content: 'TAKSİT SEÇENEKLERİ';
+                            display: inline-block;
+                            font-size: 18px;
+                            margin-bottom: 25px;
+                            font-family: "sBold";
+                            float: left;
+                            order: 1; 
+                            letter-spacing: 2px;
                         }
                     }
                     .odemeTaksitDesc,
@@ -1727,6 +1784,15 @@
                                         background: #d9b993;
                                     }
                                 }
+                            }
+                            &:before {
+                                content: 'ÖDEME BİLGİLERİ';
+                                display: inline-block;
+                                font-size: 18px;
+                                margin-bottom: 25px;
+                                font-family: "sBold";
+                                float: left;
+                                order: 1;
                             }
                         }
                     }
@@ -1960,6 +2026,29 @@
 
 }
 
+#cvcaciklama {
+    left: auto !important;
+    right: -20px;
+}
+
+@media screen and (max-width: 1400px){
+    .ems-page-cart-step1 {
+        .ems-page-default-order-payment {
+            .ems-cart-pay-type {
+                .tableOdemeBilgiKrediKarti {
+                    td {
+                        .sStylerWrp {
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 //Order payment resize setting
 @media screen and (max-width: 1250px){
     .ems-page-cart{
@@ -2000,14 +2089,26 @@
                             padding: 30px 20px;
                             display: block;
                             float: none;
+                            border: 0;
                             tr{
+                                &:nth-child(2){width:100%;}
                                 &:nth-child(3){width:100%;}
                             }
                             td{
                                 &.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO{
-                                    > span{width: 45%;}
+                                    > span{width: 10%; text-align: right;}
+                                    input {
+                                        width: 80% !important;
+                                        padding: 5px 0 10px 20px;
+                                    }
+                                }
+                                .sStylerWrp {
+                                    &:after {
+                                        display: inline-block;
+                                    }
                                 }
                             }
+
                         }
                         .ems-pay-credit-cart {
                             .pageOdemeBilgi_chkBankaBonus {
@@ -2024,7 +2125,7 @@
                             border-top: 1px solid #ecedee;
                             margin-left: 0;
                             margin-right: 0;
-                            &:empty{display: none !important;}
+                            &:empty{/*display: none !important;*/}  
                         }
                         .tableOdemeBilgiHavale{
                             .tableOdemeBilgiHavale_tddrpBNK_KOD_HV{
