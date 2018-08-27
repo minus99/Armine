@@ -5,7 +5,10 @@
                 .ems-message{
                     margin-bottom: 20px;
                 }
-                .ems-form-inner .ems-field .ems-form-label{width: 120px;}
+                .ems-form-inner .ems-field .ems-form-label{
+                    width: 120px;
+                    > span{display: block; padding-left: 10px;}
+                }
                 .ems-form-inner .ems-field.bulletin .ems-form-label span{line-height: 20px;}
             }
             &-address{
