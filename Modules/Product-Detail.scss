@@ -517,6 +517,8 @@ body.size-chart-ready{
                 vertical-align: middle;
                 text-align: center;
                 width: 33.333%;
+                &.ems-prd-brandW {display: none;}
+                &.ems-prd-brandW.show{display: table-cell;}
                 .ems-prd-detail-brandlink{
                     a{
                         display: block;
