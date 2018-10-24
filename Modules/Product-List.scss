@@ -54,6 +54,100 @@
         display: table-cell;
         vertical-align: middle;
     }
+    &-nav-sort{
+        .prdSortMenuWrapper{
+            float: right;
+            min-width: 150px;
+            margin-right: 15px;
+            &:empty{display: none;}
+        }
+        .prdSortMenu{
+            position: relative;
+            > span{
+                display: block;
+                color: #3f434f;
+                position: relative;
+                padding: 10px 25px 10px 10px;
+                background: #f5f5f5;
+                cursor: pointer;
+                &:before{
+                    content:'Filtrele';
+                    font-size: 13px;
+                    font-family: $regular;
+                }
+                &:after{
+                    font-family: 'icomoon';
+                    content: "\e907";
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    line-height: 1;
+                    margin-top: -5px;
+                    font-size: 10px;
+                }
+            }
+            .prdSortMenuInner{
+                position: absolute;
+                top: 34px;
+                left: 0;
+                width: 100%;
+                height: auto;
+                z-index: 1;
+                background: #f5f5f5;
+                padding: 10px;
+                display: none;
+                .checkbox{
+                    display: block;
+                    width: auto;
+                    height: auto;
+                    border: none;
+                    padding: 0;
+                    margin-right: 0;
+                    float: none;
+                    margin-top: 10px;
+                    &:first-child{margin-top: 0;}
+                    .cStyler{
+                        vertical-align: middle;
+                        margin-right: 7px;
+                        width: 15px;
+                        height: 15px;
+                    }
+                    .sStylerMainWrp {
+                        &:after{
+                            display: inline-block;
+                            vertical-align: middle;
+                            font-size: 12px;
+                        }
+                    }
+                    &:nth-child(1){
+                        .sStylerMainWrp{
+                            &:after{
+                                content:'Tükenenleri Gizle';
+                            }
+                        }
+                    }
+                    &:nth-child(2){
+                        .sStylerMainWrp{
+                            &:after{
+                                content:'İndirimdekiler';
+                            }
+                        }
+                    }
+                    &:nth-child(3){
+                        .sStylerMainWrp{
+                            &:after{
+                                content:'Yeni Gelenler';
+                            }
+                        }                        
+                    }
+                    label{display: none;}
+                }
+            }
+            &.opened{
+                .prdSortMenuInner{display: block;}
+            }
+        }
+    }
     &-stock{
         display: none;
     }
@@ -763,17 +857,12 @@ body.dortlu{
             }
         }
     }
-
-    .ems-page-list-container{
-        padding-left: 20px;
-        padding-right: 0;
-    }
     .ems-prd-list-top-center{
         padding-left: 20px;
     }
     .ems-prd-list-top-center-inner > .ems-col-right .ems-col-inner{
         padding-left: 5px;
-        padding-right: 5px;
+        padding-right: 10px;
     }
 
 }

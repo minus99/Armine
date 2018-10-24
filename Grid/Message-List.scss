@@ -1,6 +1,34 @@
 .ems-page {
     &-member{
         .ems-grid-message{
+            .ems-grid-header{
+                &:first-child{
+                    display: table;
+                    table-layout: fixed;
+                    width: 100%;
+                    padding: 10px 25px;
+                    > div{
+                        display: table-cell;
+                        vertical-align: middle;
+                        text-align: center;
+                        padding: 0 5px;
+                        font-family: $regular;
+                        font-size: 12px;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        color: rgba(0,0,0,.5);
+                        text-transform: uppercase;
+                    }
+                    .col-1 span{ text-indent: -999em; display: inline-block; overflow: hidden; font-size: 0;}
+                }
+            }
+            .ems-grid-header,
+            .ems-grid-row{
+                .col-1{width:20px; padding-left: 0; padding-right: 0;}
+                .col-2{width:15%;}
+                .col-3{width:60%;}
+                .col-4{width:15%;}
+            }
             .ems-grid-row{
                 background: #fff;
                 margin-bottom: 10px;
@@ -11,10 +39,6 @@
                     font-family: $regular;
                     font-size: 14px;
                 }
-                .col-1{width:20px; padding-left: 0; padding-right: 0;}
-                .col-2{width:15%;}
-                .col-3{width:60%;}
-                .col-4{width:15%;}
                 &.newMessage{
                     > div{
                         font-family: $sBold;
@@ -32,11 +56,49 @@
     .kutuBodyDefault.kutuBodyMesaj{
         display: flex;
         justify-content: space-between;
-        padding-bottom: 30px;
     }
     .kutuBodyDefault.kutuBodyMesaj div{
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 13px;
+        color: #000;
+        font-family: "regular";
+        letter-spacing: 2px;
+        font-weight: 600;
+        > a{
+            padding:5px 2px; 
+            display: inline-block;
+            margin-bottom: 15px;
+            &:hover{
+                color: #D9B993;
+            }
+        }
+        &.active{
+            > a{
+                border-bottom: 1px solid #D9B993;
+            }
+        }
+        &.kutuMesaj_yeni{
+            > a{
+                &:before{
+                    font-family:'icomoon';
+                    content: "\e91d";
+                    font-size: 6px;
+                    color: #000;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 5px;
+                    @include transition(all 0.2s ease);
+                }
+                span{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &:hover{
+                    &:before{
+                        color: #D9B993;
+                    }
+                }
+            }
+        }
     }
     &-message{
         div[id$="plhMesajYokLabel1"]{
@@ -172,7 +234,6 @@
         .tableMesajGonder_aciklama{
             padding-bottom: 30px;
         }
-
         .mesajGonder{
             .tableMesajMetin{
                 > tbody{
@@ -214,6 +275,8 @@
     .ems-page {
         &-member{
             .ems-grid-message{
+                .ems-grid-header:first-child{display: none;}
+
                 .ems-grid-row{
                     padding-left: 50px;
                     padding-right: 20px;
@@ -231,6 +294,14 @@
             }
 
             .ems-page-default{
+                .kutuBodyDefault.kutuBodyMesaj{
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    div > a{
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                }
                 &-message{
                     padding-left: 0;
                     padding-right: 0;

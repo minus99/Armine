@@ -594,9 +594,7 @@ body.ems-page-member-creating.ems-login{
                     ul{
                         li{
                             a{
-                                font-size: 14px;
                                 color: $lDark;
-                                font-family: $sBold;
                                 letter-spacing: 2px;
                                 padding: 10px 10px 10px 0;
                                 &:hover{
@@ -1120,6 +1118,7 @@ body.ems-page-member-creating.ems-login{
                     padding-top: 0;
                     padding-bottom: 0;
                     height:65px;
+                    padding-left: 0;
                 }
                 &-full{
                     display: block;

@@ -333,6 +333,7 @@ body.ems-login.mini-login-ready{
             }
         }
         &-body{
+            position: absolute;
             -moz-transform: inherit;
             -webkit-transform: inherit;
             transform: inherit;
@@ -341,7 +342,7 @@ body.ems-login.mini-login-ready{
             top: 60px;
             right: inherit;
             padding: 20px;
-            width: calc(100% - 20px);
+            width: 100%;
             height: calc(100% - 60px);
             overflow-x: hidden;
             z-index: auto;
