@@ -77,6 +77,33 @@
                     right: 0;
                 }
             }
+            > ul li a{
+                display: inline-block;
+                vertical-align: middle;
+                padding: 10px 0 10px 0;
+                position: relative;
+                font-family: $regular;
+                font-size: 13px;
+                color: $lDark;
+                @include transition(all .2s ease);
+            }
+            > ul > li{
+                > a, > .filter-count{
+                    font-family: $sBold !important;
+                }
+                &.act{
+                    > a, > .filter-count{
+                        color: $gold;
+                    }
+                }
+                > ul > li{
+                    &.act{
+                        > a, > .filter-count{
+                            color: $gold;
+                        }
+                    }
+                }
+            }
             &.opened{
                 > a{
                     &:after{
@@ -86,19 +113,33 @@
             }
             .filter-count{display: none;}
              > ul{
-                li{
-                    b{
-                        display: none;
+                > li{
+                    position: relative;
+                    &.sub-items{
+                        > b{
+                            position: absolute;
+                            width: 100%;
+                            height: 30px;
+                            right: 0;
+                            top: 7px;
+                            z-index: 1;
+                            cursor: pointer;
+                            width: 20px;
+                            height: 20px;
+                            text-align: center;
+                            line-height: 20px;
+                            &:before{
+                                font-family:'icomoon';
+                                content:'\e91d';
+                                font-size: 10px;
+                                color: #87888e;
+                            }
+                        }
                     }
-                    a{
-                        display: inline-block;
-                        vertical-align: middle;
-                        padding: 10px 0 10px 0;
-                        position: relative;
-                        font-family: $regular;
-                        font-size: 13px;
-                        color: $lDark;
-                        @include transition(all .2s ease)
+                    &.sub-items.opened{
+                        > b:before{
+                            content:'\e918';
+                        }
                     }
                     .filter-count{
                         display: inline-block;
@@ -107,14 +148,14 @@
                         font-family: $regular;
                         font-size: 13px;
                         color: $lDark;
-                        @include transition(all .2s ease)
+                        @include transition(all .2s ease);
                     }
                     &.sub{ display: block; }
-                    &.act , &:hover{
-                        a, .filter-count{color:$gold;}
+                    > ul{
+                        display: none;
                     }
                 }
-             }
+            }
         }
     }
 }
@@ -164,6 +205,27 @@
     }
 }
 
+@media screen and (min-width: $breakpointXSM){
+    .kutuKategori{
+        ul.menuKategori{
+            > li{
+                > ul > li{
+                    > a:hover, .filter-count:hover{
+                        color: $gold;
+                    }    
+                    > ul > li{
+                        &:hover{
+                            > a, > .filter-count{
+                                color: $gold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: $breakpointXSM){
     .kutuKategori{
         padding: 10px 0 10px 10px;
@@ -177,11 +239,6 @@
                         span{
                             font-family: $sBold;
                             font-size: 18px;
-                        }
-                        &:hover{
-                            span{
-                                color: $lDark;
-                            }
                         }
                         &:after{
                             font-family:'icomoon';
@@ -218,20 +275,20 @@
         }
         ul.menuKategori{
             > li{
-                /*> a{ display: none; }*/
                 > a{
                     padding-left: 10px;
-                    padding-right: 30px;
-                    &:after{
-                        right: 20px;
-                    }
+                    padding-right: 50px;
+                    &:after{ right: 20px; }
                 }
                 > ul{
                     margin-top: 10px;
+                    > li{
+                        > b{right: 17px;}
+                    }
                     li{
                         a{
                             padding-left: 10px;
-                            padding-right: 10px;
+                            padding-right: 3px;
                         }
                     }
                 }
