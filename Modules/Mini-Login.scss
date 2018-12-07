@@ -63,6 +63,7 @@
         background: $darkBlack;
         @media screen and (min-width: $breakpointXSM){
             opacity: 0;
+            visibility: hidden;
         }
         .mini-login-close{
             position: absolute;
@@ -262,6 +263,7 @@ body.ems-logoff.mini-login-ready{
             }
             @media screen and (min-width: $breakpointXSM){
                 opacity: 1;
+                visibility: visible;
             }
         }
     }
@@ -276,6 +278,7 @@ body.ems-login.mini-login-ready{
             }
             @media screen and (min-width: $breakpointXSM){
                 opacity: 1;
+                visibility: visible;
             }
         }
     }

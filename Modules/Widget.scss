@@ -59,6 +59,28 @@
     }
 }
 
+.ems-page-home{
+    .widget.bestsellers-widget{
+        .swiper-button-prev{left: -40px;}
+        .swiper-button-next{right: -40px;}
+        .swiper-button-prev,
+        .swiper-button-next{
+            display: block;
+            padding-top: 0;
+            margin-top: -45px;
+            i{
+                line-height: 40px;
+                &:before{
+                    color: #6a6a6a;
+                    font-size: 24px;
+                }
+            }
+            i.icon-ico_arrow-right:before{content:"\e906";}
+            i.icon-ico_arrow-left:before{content:"\e905";}
+        }
+    }
+}
+
 @media screen and (min-width: $breakpointXSM){
     .widget{
         &.items-1,
